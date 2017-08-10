@@ -1,10 +1,12 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { Message } from "./message.model";
 
 @Component({
-	// has to be specific so prefix it
-	selector: 'app-message',
-	templateUrl: './message.component.html',
-	styles: [`
+  // has to be specific so prefix it
+  selector: "app-message",
+  templateUrl: "./message.component.html",
+  styles: [
+    `
 			.author {
 					display: inline-block;
 					font-style: italic;
@@ -17,8 +19,9 @@ import { Component } from "@angular/core";
 					font-size: 12px;
 					width: 19%;
 			}
-	`]
+	`
+  ]
 })
-
 export class MessageComponent {
+  @Input() message: Message;
 }
